@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TornfyApp.ViewModel.ChekingQr">
+    <Grid Padding="0">
+
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="Auto" />
+	</Grid.RowDefinitions>
+	
+	<Frame HasShadow="False" BackgroundColor="Black"
+		   CornerRadius="0" Padding="5" Margin="0" x:Name="frame_qr">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<!-- Conteúdo de texto -->
+			<StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+				<Label Text="Atenção!" FontSize="Title" FontAttributes="Bold" TextColor="White" />
+				<Label Text="Este QR code é exclusivo para escaneo de cheking realizado apenas por administradores, no cheking no evento.." FontSize="14" TextColor="White" />
+			</StackLayout>
+		</Grid>
+	</Frame>
+
+	<Frame HasShadow="False" BackgroundColor="#fff4b3"
+		   CornerRadius="0" Padding="5" Margin="0" x:Name="frame_no">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<!-- Conteúdo de texto -->
+			<StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+				<Label Text="QR Code não gerado para este evento" FontSize="18" FontAttributes="Bold" TextColor="#4d4100" />
+				<FlexLayout Direction="Column">
+					<BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#4d4100"/>
+				</FlexLayout>
+				<Label Text="Não há registro de QR code disponível para esta inscrição neste evento ou o mesmo foi deletado por perda de validade ou baixa." FontSize="14" TextColor="#4d4100" />
+			</StackLayout>
+		</Grid>
+	</Frame>
+
+	<Image Margin="30" Grid.Row="1" 
+		   HeightRequest="500" VerticalOptions="Start"
+		   Source="" x:Name="img_qrcode" />
+
+	<Button Grid.Row="2" Text="Imprimir Qr Code"  HeightRequest="55" WidthRequest="145" x:Name="btn_pdf"
+         Background="#E7305E" Clicked="Button_Clicked_1" FontSize="18"
+		 Margin="20"  
+      CornerRadius="8" TextColor="White" FontAttributes="Bold" />
+
+</Grid>
+</ContentPage>
+

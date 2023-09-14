@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TornfyApp.ViewModel.Etapas_Pontuadas" 
+             Title="Etapas Pontuadas" Background="#d2d1d1">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- colors -->
+            <Color x:Key="HeaderTextColor">#585858</Color>
+            <Color x:Key="BodyTextColor">#C3C3C3</Color>
+            <Color x:Key="ButtonBackgroundColor">#5992FF</Color>
+
+            <!-- Styles -->
+            <Style x:Key="ProfileNameLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="Font" Value="MediumFontFamily" />
+            </Style>
+
+            <Style x:Key="ProfileTagLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#C3C3C3" />
+                <Setter Property="Font" Value="RegularFontFamily" />
+            </Style>
+
+            <Style x:Key="StatsNumberLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="Font" Value="LightFontFamily" />
+            </Style>
+
+            <Style x:Key="StatsCaptionLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#C3C3C3" />
+                <Setter Property="Margin" Value="0,-5,0,0"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="Font" Value="LightFontFamily" />
+            </Style>
+
+            <Style x:Key="MainBodyLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#C3C3C3" />
+                <Setter Property="Font" Value="RegularFontFamily" />
+            </Style>
+
+            <Style x:Key="FollowButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#ff9700"/>
+                <Setter Property="TextColor" Value="#585858"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="BorderRadius" Value="8"/>
+                <Setter Property="Font" Value="MediumFontFamily"/>
+            </Style>
+
+            <Style x:Key="TabButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#EFEFEF" />
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical"  Margin="10,15,10,10"
+             VerticalOptions="Fill"
+             HorizontalOptions="StartAndExpand">
+
+            <Picker 
+                SelectedIndexChanged="pcAnos_SelectedIndexChanged"
+                x:Name="pcAnos" Grid.Row="3" TextColor="#585858"
+                HorizontalOptions="FillAndExpand" TitleColor="#585858"
+                HeightRequest="50" Margin="10"
+                HorizontalTextAlignment="Center" >
+            </Picker>
+
+            <ListView x:Name="etapas_rankeadas" 
+                  HasUnevenRows="True"
+              SeparatorVisibility="None"
+              BackgroundColor="Transparent" 
+               IsPullToRefreshEnabled = "False" 
+                     ItemTapped="etapas_rankeadas_ItemTapped"
+                      ItemSelected="etapas_rankeadas_ItemSelected">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="False" Padding="10" Margin="10" HeightRequest="80"
+                                   BorderColor="DarkGray" 
+                                   CornerRadius="15" BackgroundColor="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Column 1: Image -->
+                                    <StackLayout Grid.Column="0" Margin="10,0,0,0" VerticalOptions="Center" HorizontalOptions="Start">
+                                        <Image Source="trofeu_ouro" HeightRequest="40" />
+                                    </StackLayout>
+
+                                    <!-- Column 2: Information Vertical StackLayout -->
+                                    <StackLayout Grid.Column="1" Margin="5,0,0,0" Orientation="Vertical" VerticalOptions="Center">
+                                        <Label Text="{Binding Nome_Categoria, StringFormat='Categoria: {0}'}" HorizontalTextAlignment="Start" Style="{StaticResource StatsNumberLabel}" />
+                                        <Label Text="{Binding tipo_cat, StringFormat='Tipo Categoria: {0}'}" HorizontalTextAlignment="Start" Style="{StaticResource StatsNumberLabel}" />
+                                        <Label Text="{Binding Nome_Grupo, StringFormat='{0}'}" HorizontalTextAlignment="Start" Style="{StaticResource StatsNumberLabel}" />
+                                    </StackLayout>
+
+                                    <!-- Column 3: Image of Separation -->
+
+                                    <!-- Column 4: Points -->
+                                    <StackLayout Grid.Column="3" Margin="0,0,10,0" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
+                                        <Label Text="{Binding pt, StringFormat='PT: {0}'}" FontAttributes="Bold" HorizontalTextAlignment="End" Style="{StaticResource StatsNumberLabel}" />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

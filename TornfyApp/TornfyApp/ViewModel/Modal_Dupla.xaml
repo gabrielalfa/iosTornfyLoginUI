@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+                  x:Class="TornfyApp.ViewModel.Modal_Dupla">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="30" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="20" Padding="0">
+
+        <Frame>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
+
+                <ListView x:Name="lista_jogadores" HeightRequest="180"
+                  HasUnevenRows="True"
+              SeparatorVisibility="Default"
+              BackgroundColor="Transparent" 
+               IsPullToRefreshEnabled = "False" 
+                      ItemTapped="lista_jogadores_ItemTapped" ItemSelected="lista_jogadores_ItemSelected">
+
+                    <ListView.Header>
+                        <StackLayout>
+                            <Label Text="Acessar Performance" FontAttributes="Bold" />
+                        </StackLayout>
+                    </ListView.Header>
+
+                    <ListView.Footer>
+                        <StackLayout>
+                            <Label FontSize="12"  Text="acesso a performance da dupla"
+                                    FontAttributes="Italic" />
+                        </StackLayout>
+                    </ListView.Footer>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" BackgroundColor="{Binding color_inscricao}">
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <StackLayout>
+
+                                            <ci:CircleImage Grid.Row="2" Grid.Column="0"   
+                                                HeightRequest="40"   
+                                                WidthRequest="40"   
+                                                Source="{Binding path_1}"   
+                                                Aspect="AspectFill">
+
+                                            </ci:CircleImage>
+                                        </StackLayout>
+
+                                        <StackLayout VerticalOptions="Center" Orientation="Vertical">
+
+                                            <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                                                <Label VerticalOptions="Center" 
+                                                       FontSize="Small"  TextColor="{Binding color_font}"
+                                                       Text="{Binding nome_j1}" />
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>
+

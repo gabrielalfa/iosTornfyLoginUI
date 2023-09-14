@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TornfyApp.ViewModel.Conquistas" BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- colors -->
+            <Color x:Key="HeaderTextColor">#585858</Color>
+            <Color x:Key="BodyTextColor">#919191</Color>
+            <Color x:Key="ButtonBackgroundColor">#5992FF</Color>
+
+           
+
+            <!-- Styles -->
+            <Style x:Key="ProfileNameLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="Font" Value="MediumFontFamily" />
+            </Style>
+
+            <Style x:Key="ProfileTagLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#919191" />
+                <Setter Property="Font" Value="RegularFontFamily" />
+            </Style>
+
+            <Style x:Key="StatsNumberLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="Font" Value="LightFontFamily" />
+            </Style>
+
+            <Style x:Key="StatsCaptionLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#919191" />
+                <Setter Property="Margin" Value="0,-5,0,0"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="Font" Value="LightFontFamily" />
+            </Style>
+
+            <Style x:Key="MainBodyLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#919191" />
+                <Setter Property="Font" Value="RegularFontFamily" />
+            </Style>
+
+            <Style x:Key="FollowButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#ff9700"/>
+                <Setter Property="TextColor" Value="#585858"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="BorderRadius" Value="8"/>
+                <Setter Property="Font" Value="MediumFontFamily"/>
+            </Style>
+
+            <Style x:Key="TabButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#EFEFEF" />
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+            </Grid.RowDefinitions>
+
+            <!-- header background -->
+            <Image Source="profile_quadra_fundo" Aspect="AspectFill" HeightRequest="130"/>
+            <Image Source="CurvedMask.png" VerticalOptions="End" Aspect="AspectFill" Margin="-30,0,-30,-1"/>
+
+            <!-- profile image -->
+            <Frame CornerRadius="50" BackgroundColor="White"
+                                           HeightRequest="100"
+                                           WidthRequest="100"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           Padding="0"
+                                           IsClippedToBounds="True"
+                                           Margin="0,0,0,-50"  >
+                <Image x:Name="image_jogador" Source="user_icon_blue" Aspect="AspectFill" />
+            </Frame>
+
+            <!-- Profile Name -->
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="0,50,0,00">
+
+                <Label x:Name="txt_nome" HorizontalTextAlignment="Center"  Text="Clementine Santos" 
+                       Margin="0,10,0,0" Style="{StaticResource ProfileNameLabel}"/>
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+                    <Image Source="trofeu_home" HeightRequest="15"  />
+                    <Label x:Name="ranking_elo" HorizontalTextAlignment="Center" Text="Rating Elo: 10.45" Margin="0,0, 0,-5" Style="{StaticResource ProfileTagLabel}"/>
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+            <StackLayout Grid.Row="2" Margin="0,10,0,0">
+
+                <Grid  ColumnSpacing="0" RowSpacing="0" >
+
+                    <ListView x:Name="lista_categorias" 
+                     HasUnevenRows="True"
+                     SeparatorVisibility="None"
+                     BackgroundColor="Transparent" 
+                      IsPullToRefreshEnabled = "False" 
+                      ItemTapped="lista_categorias_ItemTapped" 
+                              ItemSelected="lista_categorias_ItemSelected" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <ViewCell>
+                                    <Frame Padding="10" Margin="20,10,20,10"
+                                           HeightRequest="60"
+                                           BorderColor="#C3C3C3" 
+                                            CornerRadius="15"
+                                            BackgroundColor="White"
+                                            HasShadow="False" >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="8*" />
+
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Margin="10,0,0,0" VerticalOptions="Center" HorizontalOptions="End">
+                                                <Image Source="{Binding trofeu}" HeightRequest="40" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" Margin="10,0,0,0" Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Label HorizontalOptions="Start" Text="{Binding posicao}" Style="{StaticResource StatsNumberLabel}" />
+                                                <Label Text="{Binding Nome_Etapa}" HorizontalTextAlignment="Start" Style="{StaticResource StatsCaptionLabel}" />
+                                            </StackLayout>
+                                            
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+
+
+
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                  
+
+                </Grid>
+
+            </StackLayout>
+
+
+
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

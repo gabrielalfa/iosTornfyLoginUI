@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  x:Class="TornfyApp.ViewModel.Modal">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="30" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20">
+        <Frame>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
+                <!-- Caixa de diálogo com texto de boas-vindas -->
+                <Label Text="Como você deseja visualizar a chave?" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" />
+
+                <!-- Botões -->
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Button Text="visualizar no app" BackgroundColor="#009BDE" HeightRequest="45" Margin="0,10,0,0" WidthRequest="185"  Clicked="Button_Clicked_1" TextColor="#fff" FontAttributes="Bold" CornerRadius="8" />
+                    <Button Text="baixar formato .pdf" BackgroundColor="#E7305E" HeightRequest="45" WidthRequest="185" Clicked="Button_Clicked" TextColor="#fff" FontAttributes="Bold" CornerRadius="8" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

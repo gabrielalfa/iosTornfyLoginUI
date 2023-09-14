@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "DeZsw+bSR8C6+RzCTpxNBIl4Q1VX4asZl/n+1z0FFuQpUXP24g6fefYiCBaD6kLyKDDMixauKjvlOi6lzxupEA==",
+  "success": true,
+  "projectFilePath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/iosTornfyLoginUI/TornfyApp/TornfyApp.iOS/TornfyApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/macbook/.nuget/packages/acr.userdialogs.extended/1.0.11/acr.userdialogs.extended.1.0.11.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/btprogresshud/1.3.5/btprogresshud.1.3.5.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.appcenter/5.0.2/microsoft.appcenter.5.0.2.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.appcenter.distribute/5.0.2/microsoft.appcenter.distribute.5.0.2.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.toolkit/7.1.2/microsoft.toolkit.7.1.2.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/rg.plugins.popup/2.1.0/rg.plugins.popup.2.1.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/sharpnado.shadows/1.2.1/sharpnado.shadows.1.2.1.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/skiasharp/2.88.5/skiasharp.2.88.5.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/skiasharp.nativeassets.ios/2.88.5/skiasharp.nativeassets.ios.2.88.5.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/thomaslevesque.weakevent/4.1.0/thomaslevesque.weakevent.4.1.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/xam.plugins.forms.imagecircle/3.0.0.5/xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/xamarin.communitytoolkit/2.0.6/xamarin.communitytoolkit.2.0.6.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/xamarin.essentials/1.8.0/xamarin.essentials.1.8.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/xamarin.forms/5.0.0.2612/xamarin.forms.5.0.0.2612.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/zxing.net.mobile/2.4.1/zxing.net.mobile.2.4.1.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/zxing.net.mobile.forms/2.4.1/zxing.net.mobile.forms.2.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

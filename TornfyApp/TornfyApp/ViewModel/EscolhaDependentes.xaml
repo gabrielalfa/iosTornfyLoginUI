@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TornfyApp.ViewModel.EscolhaDependentes" Title="Dependentes">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Orientation="Vertical"
+             VerticalOptions="Fill" 
+             HorizontalOptions="StartAndExpand">
+
+
+            <Grid Margin="20,0,20,10" >
+                <Frame CornerRadius="20" BorderColor="Gray" HasShadow="False">
+
+                    <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+
+                        <StackLayout Orientation="Horizontal" >
+
+                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                <Label VerticalOptions="Center" FontSize="Small" TextColor="Black" Text="Torneio: " />
+
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                <Label VerticalOptions="Center" FontSize="Small"  x:Name="txt_nome_etapa" />
+                            </StackLayout>
+
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" >
+
+                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                <Label VerticalOptions="Center" FontSize="Small" TextColor="Black" Text="Jogador: " />
+
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                <Label VerticalOptions="Center" FontSize="Small"  x:Name="txt_nome_jogador" />
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Label  Margin="0,0,0,5" FontSize="Small"
+                    Text="Escolha um jogador pra inscrever" 
+                    TextColor="Gray" HorizontalTextAlignment="Center"/>
+
+            <FlexLayout Direction="Column">
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
+            </FlexLayout>
+        </StackLayout>
+
+     
+        <ListView Grid.Row="1" x:Name="lista_pagamentos"
+          HasUnevenRows="True"
+          SeparatorVisibility="Default"
+          BackgroundColor="Transparent"
+          IsPullToRefreshEnabled="False"
+          ItemTapped="lista_pagamentos_ItemTapped"
+          ItemSelected="lista_pagamentos_ItemSelected"
+          Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- Coluna 1: Imagem arredondada -->
+                            <Frame BackgroundColor="White" CornerRadius="25" Padding="0" HasShadow="False"
+                                   WidthRequest="40" HeightRequest="40"
+                                   Grid.Column="0" Grid.Row="0">
+                                <Image Source="{Binding Path}" Aspect="AspectFill" />
+                            </Frame>
+
+                            <!-- Coluna 2: Nome jogador e subtitulo emprego -->
+                            <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
+                                <Label FontSize="16" FontAttributes="Bold" 
+                               TextColor="{Binding color_font}" Margin="10,0,0,0"
+                               Text="{Binding Nome_Jogador}" />
+                            </StackLayout>
+
+                            <!-- Coluna 3: Botão X para deletar da lista -->
+                            <ImageButton Clicked="ImageButton_Clicked"
+                                 Grid.Column="2" Grid.Row="0"
+                                 BackgroundColor="Transparent"
+                                 WidthRequest="30" HeightRequest="30"
+                                 CornerRadius="15">
+                                <ImageButton.Source>
+                                    <FileImageSource File="more.png" />
+                                </ImageButton.Source>
+                            </ImageButton>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+        <!--<Button x:Name="btn_pgoPix" Grid.Row="2" Text="Finalizar Rateio"  HeightRequest="55" WidthRequest="145"
+                   Background="#3c62aa"  Clicked="btn_pgoPix_Clicked" FontSize="16" Margin="20,0,20,20"  
+                CornerRadius="8" TextColor="White" FontAttributes="Bold" />-->
+
+
+
+    </Grid>
+</ContentPage>
+

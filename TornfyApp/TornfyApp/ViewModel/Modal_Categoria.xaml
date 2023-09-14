@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  x:Class="TornfyApp.ViewModel.Modal_Categoria" BackgroundColor="#C3C3C3">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="30" />
+            </Style>
+
+            <Style x:Key="StatsNumberLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#585858" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="Font" Value="LightFontFamily" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="20" Padding="0">
+
+        <Frame>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
+
+                <ListView x:Name="lista_categorias" HeightRequest="480"
+                  HasUnevenRows="True"
+              SeparatorVisibility="Default"
+              BackgroundColor="Transparent" 
+               IsPullToRefreshEnabled = "False" 
+                      ItemTapped="lista_categorias_ItemTapped" ItemSelected="lista_categorias_ItemSelected">
+
+                    <ListView.Header>
+                        <StackLayout>
+                            <Label Text="Acessar Categorias" FontAttributes="Bold" />
+                        </StackLayout>
+                    </ListView.Header>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" BackgroundColor="{Binding color_inscricao}">
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <StackLayout VerticalOptions="Center" Orientation="Vertical">
+                                            <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                                                <Image Source="menu_regulamento.png" HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" />
+                                                <Label VerticalOptions="Center"
+                                   Text="{Binding Categoria}" Style="{StaticResource StatsNumberLabel}" />
+                                                <!-- Adicionando a imagem ao lado direito do texto da categoria -->
+                                              
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+    
+
+</pages:PopupPage>

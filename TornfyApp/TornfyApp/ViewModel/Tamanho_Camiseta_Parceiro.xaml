@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TornfyApp.ViewModel.Tamanho_Camiseta_Parceiro"  Title="Camiseta Parceiro">
+    <ContentPage.Content>
+        <StackLayout>
+
+          
+			<Grid Margin="0">
+				<Frame HasShadow="False" BackgroundColor="#b3d7ff" CornerRadius="0" Padding="10" Margin="0">
+					<Grid>
+						<Grid.RowDefinitions>
+							<!-- Altura automática para a primeira linha -->
+							<RowDefinition Height="180" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+
+						<StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+							<Image Source="info_azul_escuro" HeightRequest="55" VerticalOptions="Center" HorizontalOptions="Center" />
+						</StackLayout>
+
+						<!-- Conteúdo de texto -->
+						<StackLayout Grid.Row="0" Grid.Column="1" Padding="10">
+							<Label x:Name="txt_nome_etapa" FontSize="20" FontAttributes="Bold" TextColor="#004899" />
+							<Label x:Name="txt_nome_parceiro" VerticalOptions="Center" FontSize="Small" TextColor="#004899"  />
+							<Label x:Name="txt_nome_categoria" VerticalOptions="Center" FontSize="Small"  TextColor="#004899" />
+						</StackLayout>
+					</Grid>
+				</Frame>
+			</Grid> 
+
+            <Image Margin="20" Source="camiseta_azul" HeightRequest="30"/>
+
+            <Label
+            Margin="0,0,0,0"
+                FontSize="16" FontAttributes="Bold,Italic"
+            HorizontalOptions="CenterAndExpand"
+            Text="Tamanha de Camiseta (PARCEIRO DUPLA)" />
+            <Label
+                FontSize="12"
+            HorizontalOptions="CenterAndExpand"
+            Text="Tamanhos Disponíveis" />
+
+            <StackLayout>
+                <ListView x:Name="lista_camisetas" 
+                  HasUnevenRows="True"
+              SeparatorVisibility="Default"
+              BackgroundColor="Transparent" 
+               IsPullToRefreshEnabled = "False"
+                      ItemTapped="lista_camisetas_ItemTapped"
+                      ItemSelected="lista_camisetas_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" BackgroundColor="{Binding color_inscricao}">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+
+                                            <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                                                <Image Source="camiseta_azul" Margin="10,10,0,10" HeightRequest="30"/>
+                                                <Label VerticalOptions="Center"  
+                                                   FontSize="18"
+                                                   Margin="10,10,0,10"
+                                                   Text="{Binding tamanho}" />
+                                            </StackLayout>
+
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

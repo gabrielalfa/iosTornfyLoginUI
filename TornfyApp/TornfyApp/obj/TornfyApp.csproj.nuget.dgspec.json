@@ -1,0 +1,107 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/iosTornfyLoginUI/TornfyApp/TornfyApp/TornfyApp.csproj": {}
+  },
+  "projects": {
+    "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/iosTornfyLoginUI/TornfyApp/TornfyApp/TornfyApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/iosTornfyLoginUI/TornfyApp/TornfyApp/TornfyApp.csproj",
+        "projectName": "TornfyApp",
+        "projectPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/iosTornfyLoginUI/TornfyApp/TornfyApp/TornfyApp.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/iosTornfyLoginUI/TornfyApp/TornfyApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macbook/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Acr.UserDialogs.Extended": {
+              "target": "Package",
+              "version": "[1.0.11, )"
+            },
+            "Microsoft.Toolkit": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Sharpnado.Shadows": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.5, )"
+            },
+            "Xam.Plugins.Forms.ImageCircle": {
+              "target": "Package",
+              "version": "[3.0.0.5, )"
+            },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[2.0.6, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2612, )"
+            },
+            "ZXing.Net.Mobile.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/Users/macbook/Library/Caches/VisualStudio/17.0/MSBuild/14466_3/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

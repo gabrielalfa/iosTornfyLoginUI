@@ -1,0 +1,139 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp.Android/TornfyApp.Android.csproj": {}
+  },
+  "projects": {
+    "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp.Android/TornfyApp.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp.Android/TornfyApp.Android.csproj",
+        "projectName": "TornfyApp.Android",
+        "projectPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp.Android/TornfyApp.Android.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp.Android/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/macbook/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid13.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid13.0": {
+            "projectReferences": {
+              "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp/TornfyApp.csproj": {
+                "projectPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp/TornfyApp.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid13.0": {
+          "dependencies": {
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2196, )"
+            }
+          }
+        }
+      }
+    },
+    "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp/TornfyApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp/TornfyApp.csproj",
+        "projectName": "TornfyApp",
+        "projectPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp/TornfyApp.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Users/macbook/Documents/Tornfy_IOS_NovoMAC_i7-main/TornfyApp/TornfyApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macbook/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Acr.UserDialogs.Extended": {
+              "target": "Package",
+              "version": "[1.0.11, )"
+            },
+            "Microsoft.Toolkit": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.3, )"
+            },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[2.0.6, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.7.5, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2578, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/Users/macbook/Library/Caches/VisualStudio/17.0/MSBuild/1348_3/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:renderers="clr-namespace:TornfyApp.Renderers" 
+			 xmlns:helpers="clr-namespace:TornfyApp.Helpers"
+			 x:Class="TornfyApp.ViewModel.Login_UI"
+             xmlns:font="clr-namespace:TornfyApp.Fonts;assembly=TornfyApp" 
+			  NavigationPage.HasNavigationBar="False"
+			 xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="NavigationPage">
+				<Setter Property="BarBackgroundColor" Value="#fff"/>
+				<Setter Property="BarTextColor" Value="#1f2225"/>
+			</Style>
+			<Style x:Key="ImageStyle" TargetType="Image">
+				<Setter Property="HeightRequest" Value="120" />
+				<Setter Property="WidthRequest" Value="120" />
+				<Setter Property="Source" Value="tornfylogo" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+			</Style>
+			<Style x:Key="NormaleLabel" TargetType="Label">
+				<Setter Property="TextColor" Value="Black" />
+				<Setter Property="FontSize" Value="12" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+
+	<ScrollView>
+		<StackLayout>
+			<sh:Shadows CornerRadius="10" Shades="{sh:SingleShade Offset='10, 0', Opacity=0.3, Color='#1F54C3', BlurRadius=30}">
+				<renderers:PancakeView
+                Padding="0"
+                BackgroundColor="White"
+                HeightRequest="300">
+					<StackLayout>
+						<Image
+                        x:Name="Logo"
+                        Grid.Row="0"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource ImageStyle}"
+                        VerticalOptions="CenterAndExpand" />
+						<Grid
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="0"
+                        HorizontalOptions="FillAndExpand">
+							<StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+								<StackLayout.GestureRecognizers>
+									<TapGestureRecognizer Tapped="LoginClick" />
+								</StackLayout.GestureRecognizers>
+								<Label
+                                x:Name="loginLabel"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource NormaleLabel}"
+                                Text="Login" />
+								<BoxView
+                                x:Name="loginBox"
+                                BackgroundColor="#1F54C3"
+                                HeightRequest="4"
+                                HorizontalOptions="FillAndExpand" />
+							</StackLayout>
+							<StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+								<StackLayout.GestureRecognizers>
+									<TapGestureRecognizer Tapped="ValidarCPF" />
+								</StackLayout.GestureRecognizers>
+								<Label
+                                x:Name="signupLabel"
+                                FontAttributes="None"
+                                FontSize="20"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource NormaleLabel}"
+                                Text="Registro" />
+								<BoxView
+                                x:Name="signUpBox"
+                                BackgroundColor="White"
+                                HeightRequest="4"
+                                HorizontalOptions="FillAndExpand" />
+							</StackLayout>
+						</Grid>
+
+					</StackLayout>
+				</renderers:PancakeView>
+			</sh:Shadows>
+			<StackLayout Margin="25,0,25,20" Spacing="20">
+				<StackLayout HorizontalOptions="StartAndExpand" WidthRequest="250">
+					<Label
+                    FontAttributes="Bold"
+                    FontSize="30" Margin="0,10,0,0"
+                    HorizontalOptions="Start"
+                    Style="{StaticResource NormaleLabel}"
+                    Text="Acesso" x:Name="lbl_title"
+                    VerticalOptions="Start" />
+					<Label
+                    FontSize="12" x:Name="subtitulo"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Start"
+                    MaxLines="2"
+                    Style="{Binding NormaleLabel}"
+                    Text="Acesse seus dados, sua performance, inscrições, pagamentos, locações e muito mais."
+                    TextColor="#1A1A1A" />
+				</StackLayout>
+				<sh:Shadows x:Name="txt_Nome_jogador" CornerRadius="10" IsVisible="false">
+
+					<sh:Shadows.Shades>
+						<sh:ImmutableShades>
+							<sh:Shade  BlurRadius="30" Opacity="0.3" Offset="0,0" Color="#1F54C3" />
+						</sh:ImmutableShades>
+					</sh:Shadows.Shades>
+					<renderers:PancakeView
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    CornerRadius="10"
+                    HeightRequest="52">
+						<renderers:BorderlessEntry
+                        FontAttributes="None"
+                        FontSize="14"  x:Name="lbl_Nome_jogador"
+                        IsPassword="False"
+                        Placeholder="Nome Completo"
+                        PlaceholderColor="Gray"
+                        TextColor="Black" />
+					</renderers:PancakeView>
+				</sh:Shadows>
+
+				<sh:Shadows CornerRadius="10" x:Name="txt_Email">
+					<sh:Shadows.Shades>
+						<sh:ImmutableShades>
+							<sh:Shade
+                            BlurRadius="30"
+                            Opacity="0.3"
+                            Offset="0,0"
+                            Color="#1F54C3" />
+
+						</sh:ImmutableShades>
+					</sh:Shadows.Shades>
+					<renderers:PancakeView
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    CornerRadius="10"
+                    HeightRequest="52">
+						<renderers:BorderlessEntry
+                        FontAttributes="None"
+                        FontSize="14"  x:Name="lbl_Email"
+                        IsPassword="False"
+                        Placeholder="Email de Cadastro"
+                        PlaceholderColor="Gray"
+                        TextColor="Black" />
+					</renderers:PancakeView>
+				</sh:Shadows>
+
+				<sh:Shadows CornerRadius="10" x:Name="txt_Pass"
+							Shades="{sh:SingleShade Offset='0, 0',
+					Opacity=0.3, Color='#1F54C3', BlurRadius=30}">
+					<renderers:PancakeView
+                    Padding="15,0,10,0"
+                    BackgroundColor="White"
+                    CornerRadius="10"
+                    Elevation="0"
+                    HeightRequest="52">
+						<renderers:BorderlessEntry
+                        FontAttributes="None"
+                        FontSize="14" x:Name="lbl_Pass"
+                        IsPassword="True"
+                        Placeholder="Senha de Acesso"
+                        PlaceholderColor="Gray"
+                        TextColor="Black" />
+					</renderers:PancakeView>
+				</sh:Shadows>
+
+				<sh:Shadows CornerRadius="10" x:Name="txt_CPF">
+					<sh:Shadows.Shades>
+						<sh:ImmutableShades>
+							<sh:Shade
+                             BlurRadius="30"
+                             Opacity="0.3"
+                             Offset="0,0"
+                             Color="#1F54C3" />
+
+						</sh:ImmutableShades>
+					</sh:Shadows.Shades>
+					<renderers:PancakeView
+                         Padding="15,0,10,0"
+                         BackgroundColor="White"
+                         CornerRadius="10"
+                         HeightRequest="52">
+						<renderers:BorderlessEntry
+                     FontAttributes="None"  x:Name="lbl_cpf"
+                     FontSize="14" Keyboard="Numeric"
+                     IsPassword="False"
+                     Placeholder="Informe seu CPF"
+                     PlaceholderColor="Gray"
+                     TextColor="Black">
+							<Entry.Behaviors>
+								<xct:MaskedBehavior Mask="000.000.000-00" UnMaskedCharacter="0" />
+							</Entry.Behaviors>
+						</renderers:BorderlessEntry>
+					</renderers:PancakeView>
+				</sh:Shadows>
+
+
+				<sh:Shadows CornerRadius="10" x:Name="txt_Telefone">
+					<sh:Shadows.Shades>
+						<sh:ImmutableShades>
+							<sh:Shade
+                         BlurRadius="30"
+                         Opacity="0.3"
+                         Offset="0,0"
+                         Color="#1F54C3" />
+
+						</sh:ImmutableShades>
+					</sh:Shadows.Shades>
+					<renderers:PancakeView
+                                 Padding="15,0,10,0"
+                                 BackgroundColor="White"
+                                 CornerRadius="10"
+                                 HeightRequest="52">
+						<renderers:BorderlessEntry
+                     FontAttributes="None" 
+                     FontSize="14" Keyboard="Numeric"
+                     IsPassword="False" x:Name="lbl_Telefone"
+                     Placeholder="Seu Telefone"
+                     PlaceholderColor="Gray"
+                     TextColor="Black">
+							<Entry.Behaviors>
+								<xct:MaskedBehavior Mask="(00) 0.0000-0000" UnMaskedCharacter="0" />
+							</Entry.Behaviors>
+						</renderers:BorderlessEntry>
+					</renderers:PancakeView>
+				</sh:Shadows>
+
+				<sh:Shadows CornerRadius="10" x:Name="txt_DataNasc">
+					<sh:Shadows.Shades>
+						<sh:ImmutableShades>
+							<sh:Shade
+                                BlurRadius="30"
+                                Opacity="0.3"
+                                Offset="0,0"
+                                Color="#1F54C3" />
+
+						</sh:ImmutableShades>
+					</sh:Shadows.Shades>
+					<renderers:PancakeView
+                            Padding="15,0,10,0"
+                            BackgroundColor="White"
+                            CornerRadius="10"
+                            HeightRequest="52">
+						<renderers:BorderlessEntry
+                             FontAttributes="None"  x:Name="lbl_datanasc"
+                             FontSize="14" Keyboard="Numeric"
+                             IsPassword="False"
+                             Placeholder="Informe Data Nascimento"
+                             PlaceholderColor="Gray"
+                             TextColor="Black">
+							<Entry.Behaviors>
+								<xct:MaskedBehavior Mask="00/00/0000" UnMaskedCharacter="0" />
+							</Entry.Behaviors>
+						</renderers:BorderlessEntry>
+					</renderers:PancakeView>
+				</sh:Shadows>
+
+				<StackLayout x:Name="stk_controlls"
+					HorizontalOptions="FillAndExpand" 
+					Orientation="Horizontal">
+					<!--<CheckBox x:Name="ck_adm"
+                        HeightRequest="30"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="30"
+                        Color="#2642D3" />
+					<Label
+                        FontSize="12"
+                        HorizontalOptions="StartAndExpand"
+                        Style="{Binding NormaleLabel}"
+                        Text="Login Administrativo"
+                        TextColor="#1A1A1A"
+                        VerticalOptions="CenterAndExpand" />-->
+					<Label
+                        FontSize="12"
+                        HorizontalOptions="Start"
+                        Style="{Binding NormaleLabel}"
+                        Text="Esqueceu a senha?"
+                        TextColor="#2642D3"
+                        VerticalOptions="CenterAndExpand" >
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Tapped="Habilitar_Lembrar_senha" />
+						</Label.GestureRecognizers>
+					</Label>
+				</StackLayout>
+
+				<renderers:PancakeView
+                Padding="15,0,10,0" x:Name="btn_gradiente"
+                BackgroundGradientAngle="270"
+				BackgroundGradientEndColor="#ffd900"
+                BackgroundGradientStartColor="#F3A866"
+                CornerRadius="10"
+                Elevation="2"
+                HeightRequest="52">
+					<renderers:PancakeView.GestureRecognizers>
+						<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+					</renderers:PancakeView.GestureRecognizers>
+					<Label x:Name="btn_global"
+                    FontSize="20"
+						   FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource NormaleLabel}"
+                    Text="LOGIN"
+                    TextColor="#1A1A1A"
+                    VerticalOptions="CenterAndExpand" />
+				</renderers:PancakeView>
+
+				<BoxView x:Name="linha_div"
+                        BackgroundColor="White"
+                        HeightRequest="2"
+                        HorizontalOptions="FillAndExpand" />
+				<StackLayout x:Name="lbl_voltar"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        Spacing="10">
+					<Label x:Name="voltar_login"
+                        FontSize="12"
+                        HorizontalOptions="End"
+                        Style="{Binding NormaleLabel}"
+                        Text="Já tem uma conta? Fazer Login"
+                        TextColor="#2642D3"
+                        VerticalOptions="CenterAndExpand" >
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+						</Label.GestureRecognizers>
+					</Label>
+				</StackLayout>
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+</ContentPage>

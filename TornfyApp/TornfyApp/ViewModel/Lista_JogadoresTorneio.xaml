@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="TornfyApp.ViewModel.Lista_JogadoresTorneio" BackgroundColor="White" Padding="20,10,20,10">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout>
+                <Picker SelectedIndexChanged="pcCategoria_SelectedIndexChanged"
+                        x:Name="pcCategoria" Grid.Row="3" 
+                        HorizontalOptions="FillAndExpand" 
+                        Title="Selecione uma categoria:" 
+                        HeightRequest="50" TextColor="Black" TitleColor="Black"
+                        HorizontalTextAlignment="Center"
+                        ItemDisplayBinding="{Binding Categoria_Nome}">
+                    <Picker.Items>
+                        <x:String>1 Classe SM</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <Label x:Name="txt_subtitle"
+                   Text="Lista de Jogadores por categoria"
+                   TextColor="DarkGray" FontSize="14" HorizontalTextAlignment="Center"/>
+
+
+            <ListView x:Name="lista_jogadores" 
+                  HasUnevenRows="True"
+              SeparatorVisibility="Default"
+              BackgroundColor="Transparent" 
+               IsPullToRefreshEnabled = "False" 
+                      ItemTapped="lista_jogadores_ItemTapped" ItemSelected="lista_jogadores_ItemSelected">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+                            <Grid Padding="10" BackgroundColor="{Binding color_inscricao}">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <StackLayout >
+
+                                        <ci:CircleImage Grid.Row="2" Grid.Column="0"   
+                                                HeightRequest="40"   
+                                                WidthRequest="40"   
+                                                Source="{Binding path_1}"   
+                                                Aspect="AspectFill">
+
+                                        </ci:CircleImage>
+
+                                    </StackLayout>
+
+                                    <StackLayout VerticalOptions="Center" Orientation="Vertical">
+
+                                        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                                            <Label VerticalOptions="Center" 
+                               FontSize="Small"  TextColor="{Binding color_font}"
+                               Text="{Binding Nome_Jogador_simples}" />
+
+                                        </StackLayout>
+
+                                        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+
+
+                                            <Label VerticalOptions="Center" 
+                               FontSize="Small" TextColor="{Binding color_font}"
+                               Text="clube:" FontAttributes="Bold" />
+
+                                            <Label VerticalOptions="Center" HorizontalTextAlignment="Start"  
+                               FontSize="Small" TextColor="{Binding color_font}"
+                               Text="{Binding Nome_Clube}" />
+
+                                            <Label VerticalOptions="Center" 
+                               FontSize="Small" TextColor="{Binding color_font}"
+                               Text="pontos:" FontAttributes="Bold"  />
+
+                                            <Label VerticalOptions="Center"  
+                               FontSize="Small" TextColor="{Binding color_font}"
+                               Text="{Binding pontos}" />
+
+
+
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+
+                                    <StackLayout HorizontalOptions="EndAndExpand"  Orientation="Vertical">
+                                        <Label VerticalOptions="Center" 
+                                               FontSize="Small" TextColor="{Binding color_font}"
+                                               Text="{Binding string_pagamento}" />
+                                        <Label VerticalOptions="Center" 
+                                               FontSize="Small" TextColor="{Binding color_font}"
+                                               Text="{Binding situacao_inscricao}" />
+
+                                    </StackLayout>
+
+                                </StackLayout>
+
+
+
+
+                            </Grid>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView x:Name="lista_jogadores_duplas" 
+                  HasUnevenRows="True" SeparatorColor="DarkGray"
+              SeparatorVisibility="Default"
+              BackgroundColor="Transparent" 
+               IsPullToRefreshEnabled = "False" 
+                      ItemTapped="lista_jogadores_ItemTapped"
+                      ItemSelected="lista_jogadores_duplas_ItemSelected" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid ColumnSpacing="0" Padding="10,10,20,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*" />
+                                    <ColumnDefinition Width="7*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--LINHA 1-->
+
+                                <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical" Margin="0">
+                                    <StackLayout x:Name="path_simples" Orientation="Vertical" >
+                                       
+                                        <ci:CircleImage Grid.Row="2" Grid.Column="0"   
+                                                HeightRequest="30"   
+                                                WidthRequest="30"   
+                                                Source="{Binding path_1}"   
+                                                Aspect="AspectFill">
+
+                                        </ci:CircleImage>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+
+                                <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Orientation="Vertical">
+                                    <Label VerticalOptions="Center" 
+                                                 FontSize="14"  TextColor="{Binding color_font}"
+                                                Text="{Binding nome_j1}" />
+                                </StackLayout>
+
+                                <!--LINHA 1-->
+
+
+                                <!--LINHA 2-->
+
+                                <StackLayout Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical" Margin="0">
+                                    <StackLayout x:Name="path_dupla" Orientation="Vertical" >
+                                        <ci:CircleImage Grid.Row="2" Grid.Column="0"   
+                                                HeightRequest="30"   
+                                                WidthRequest="30"   
+                                                Source="{Binding path_2}"   
+                                                Aspect="AspectFill">
+
+                                        </ci:CircleImage>
+                                    </StackLayout>
+                                </StackLayout>
+
+
+                                <StackLayout Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Orientation="Vertical">
+                                    <Label VerticalOptions="Center" 
+                                                FontSize="14"  TextColor="{Binding color_font}"
+                                                Text="{Binding nome_j2}" />
+                                </StackLayout>
+
+                                <!--LINHA 2-->
+
+
+                                <StackLayout Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"  VerticalOptions="Center" Orientation="Vertical">
+
+                                    <Label VerticalOptions="Center"  
+                                                 FontSize="Small" FontAttributes="Bold" TextColor="{Binding color_font}"
+                                                 Text="{Binding pontos, StringFormat='pt: {0}'}" />
+
+                                    <Label VerticalOptions="Center" 
+                                                FontSize="Small" TextColor="{Binding color_font}"
+                                                Text="{Binding string_pagamento}" />
+
+                                    <Label VerticalOptions="Center" 
+                                               FontSize="Small" TextColor="{Binding color_font}"
+                                               Text="{Binding situacao_inscricao}" />
+                                </StackLayout>
+
+
+
+                            </Grid>
+
+
+                        </ViewCell>
+
+
+                      
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
